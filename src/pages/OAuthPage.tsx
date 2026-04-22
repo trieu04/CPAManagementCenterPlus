@@ -5,7 +5,8 @@ import iconAntigravity from '@/assets/icons/antigravity.svg';
 import iconClaude from '@/assets/icons/claude.svg';
 import iconCodex from '@/assets/icons/codex.svg';
 import iconGemini from '@/assets/icons/gemini.svg';
-import iconGithub from '@/assets/icons/github.svg';
+import IconGithubLight from '@/assets/icons/github-light.svg';
+import IconGithubDark from '@/assets/icons/github-dark.svg';
 import iconGrok from '@/assets/icons/grok.svg';
 import iconGrokDark from '@/assets/icons/grok-dark.svg';
 import iconIflow from '@/assets/icons/iflow.svg';
@@ -127,7 +128,7 @@ const PROVIDERS: {
     titleKey: 'auth_login.github_oauth_title',
     hintKey: 'auth_login.github_oauth_hint',
     urlLabelKey: 'auth_login.github_oauth_url_label',
-    icon: iconGithub,
+    icon: { light: IconGithubLight, dark: IconGithubDark },
   },
   {
     id: 'kimi',
@@ -502,8 +503,8 @@ export function OAuthPage() {
       const errorMessage =
         status === 404
           ? t('auth_login.oauth_callback_upgrade_hint', {
-              defaultValue: 'Please update CLI Proxy API or check the connection.',
-            })
+            defaultValue: 'Please update CLI Proxy API or check the connection.',
+          })
           : message || undefined;
       updateProviderState(provider, {
         callbackSubmitting: false,
