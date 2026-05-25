@@ -6,12 +6,10 @@
 import { useCallback, useMemo, useRef, useState, type FormEvent } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/Button';
-import { Card } from '@/components/ui/Card';
 import { Input } from '@/components/ui/Input';
 import { Modal } from '@/components/ui/Modal';
 import {
   IconExternalLink,
-  IconRefreshCw,
   IconSettings,
 } from '@/components/ui/icons';
 import { useHeaderRefresh } from '@/hooks/useHeaderRefresh';
@@ -71,7 +69,6 @@ export function UsagePage() {
       if (!trimmed) {
         return t('usage.url_required', { defaultValue: 'URL is required.' });
       }
-      // Allow root-relative paths (e.g. /usage) and absolute http(s) URLs.
       if (trimmed.startsWith('/')) return '';
       try {
         const parsed = new URL(trimmed);
@@ -123,38 +120,17 @@ export function UsagePage() {
 
   return (
     <div className={styles.container}>
-      <div className={styles.pageHeader}>
-        <h1 className={styles.pageTitle}>{t('usage.title')}</h1>
-        <p className={styles.description}>{t('usage.description')}</p>
-      </div>
-
-      <div className={styles.toolbar}>
-        <div className={styles.urlField}>
-          <Input
-            value={trimmedUrl}
-            readOnly
-            aria-label={t('usage.current_url', { defaultValue: 'Current usage URL' })}
-            placeholder={t('usage.url_placeholder', { defaultValue: '/usage' })}
-          />
-        </div>
-        <div className={styles.toolbarActions}>
-          <Button variant="secondary" size="sm" onClick={openConfig}>
-            <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
-              <IconSettings size={16} />
-              {t('usage.configure')}
-            </span>
-          </Button>
+      <div className={styles.header}>
+        <h1 className={styles.title}>{t('usage.title')}</h1>
+        <div className={styles.actions}>
           <Button
-            variant="secondary"
+            variant="ghost"
             size="sm"
-            onClick={reloadFrame}
-            disabled={!hasUrl}
-            title={t('usage.refresh', { defaultValue: 'Reload' })}
+            onClick={openConfig}
+            title={t('usage.configure')}
+            aria-label={t('usage.configure')}
           >
-            <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
-              <IconRefreshCw size={16} />
-              {t('usage.refresh', { defaultValue: 'Reload' })}
-            </span>
+            <IconSettings size={16} />
           </Button>
           <Button
             variant="ghost"
@@ -162,35 +138,31 @@ export function UsagePage() {
             onClick={handleOpenInNewTab}
             disabled={!hasUrl}
             title={t('usage.open_in_new_tab', { defaultValue: 'Open in new tab' })}
+            aria-label={t('usage.open_in_new_tab', { defaultValue: 'Open in new tab' })}
           >
-            <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
-              <IconExternalLink size={16} />
-              {t('usage.open_in_new_tab', { defaultValue: 'Open in new tab' })}
-            </span>
+            <IconExternalLink size={16} />
           </Button>
         </div>
       </div>
 
-      <Card className={styles.frameCard}>
-        <div className={styles.frameWrapper}>
-          {hasUrl ? (
-            <iframe
-              ref={iframeRef}
-              key={`${iframeUrl}#${reloadKey}`}
-              src={iframeUrl}
-              title={t('usage.title')}
-              className={styles.frame}
-              referrerPolicy="same-origin"
-            />
-          ) : (
-            <div className={styles.emptyState}>
-              {t('usage.empty_url', {
-                defaultValue: 'Configure an iframe URL to display the usage view.',
-              })}
-            </div>
-          )}
-        </div>
-      </Card>
+      <div className={styles.frameWrapper}>
+        {hasUrl ? (
+          <iframe
+            ref={iframeRef}
+            key={`${iframeUrl}#${reloadKey}`}
+            src={iframeUrl}
+            title={t('usage.title')}
+            className={styles.frame}
+            referrerPolicy="same-origin"
+          />
+        ) : (
+          <div className={styles.emptyState}>
+            {t('usage.empty_url', {
+              defaultValue: 'Configure an iframe URL to display the usage view.',
+            })}
+          </div>
+        )}
+      </div>
 
       <Modal
         open={configOpen}
