@@ -116,6 +116,7 @@
     "auth_files": "认证文件",
     "oauth": "OAuth 登录",
     "quota_management": "配额管理",
+    "usage": "使用情况",
     "config_management": "配置面板",
     "logs": "日志查看",
     "system_info": "中心信息"
@@ -1106,6 +1107,23 @@
         "add": "添加"
       }
     }
+  },
+  "usage": {
+    "title": "使用情况",
+    "description": "在管理中心内查看使用情况仪表盘。",
+    "configure": "配置",
+    "refresh": "重新加载",
+    "open_in_new_tab": "新标签页打开",
+    "current_url": "当前使用情况 URL",
+    "url_placeholder": "/usage",
+    "config_title": "使用情况 iframe URL",
+    "config_hint": "URL 仅保存在当前浏览器中。可使用根相对路径（例如 /usage）或完整的 http(s) URL。",
+    "url_label": "Iframe URL",
+    "url_required": "URL 不能为空。",
+    "url_invalid": "仅支持 http(s) URL 或根相对路径。",
+    "reset_default": "恢复默认",
+    "config_saved": "使用情况 URL 已更新。",
+    "empty_url": "请配置 iframe URL 以显示使用情况视图。"
   },
   "quota_management": {
     "title": "配额管理",

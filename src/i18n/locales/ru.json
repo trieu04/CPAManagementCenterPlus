@@ -116,6 +116,7 @@
     "auth_files": "Файлы аутентификации",
     "oauth": "OAuth вход",
     "quota_management": "Управление квотами",
+    "usage": "Использование",
     "config_management": "Панель конфигурации",
     "logs": "Просмотр логов",
     "system_info": "Информация системы"
@@ -1103,6 +1104,23 @@
         "add": "Добавить"
       }
     }
+  },
+  "usage": {
+    "title": "Использование",
+    "description": "Просматривайте панель использования внутри центра управления.",
+    "configure": "Настроить",
+    "refresh": "Перезагрузить",
+    "open_in_new_tab": "Открыть в новой вкладке",
+    "current_url": "Текущий URL использования",
+    "url_placeholder": "/usage",
+    "config_title": "URL iframe использования",
+    "config_hint": "URL хранится только в вашем браузере. Используйте путь от корня (например, /usage) или полный http(s) URL.",
+    "url_label": "Iframe URL",
+    "url_required": "URL обязателен.",
+    "url_invalid": "Разрешены только http(s) URL или пути от корня.",
+    "reset_default": "Сбросить по умолчанию",
+    "config_saved": "URL использования обновлён.",
+    "empty_url": "Настройте iframe URL, чтобы отобразить страницу использования."
   },
   "quota_management": {
     "title": "Управление квотами",

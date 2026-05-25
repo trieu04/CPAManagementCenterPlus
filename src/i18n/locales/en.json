@@ -116,6 +116,7 @@
     "auth_files": "Auth Files",
     "oauth": "OAuth Login",
     "quota_management": "Quota Management",
+    "usage": "Usage",
     "config_management": "Config Panel",
     "logs": "Logs Viewer",
     "system_info": "Management Center Info"
@@ -1106,6 +1107,23 @@
         "add": "Add"
       }
     }
+  },
+  "usage": {
+    "title": "Usage",
+    "description": "View the usage dashboard inside the management center.",
+    "configure": "Configure",
+    "refresh": "Reload",
+    "open_in_new_tab": "Open in new tab",
+    "current_url": "Current usage URL",
+    "url_placeholder": "/usage",
+    "config_title": "Usage iframe URL",
+    "config_hint": "The URL is stored in your browser only. Use a root-relative path (e.g. /usage) or a full http(s) URL.",
+    "url_label": "Iframe URL",
+    "url_required": "URL is required.",
+    "url_invalid": "Only http(s) URLs or root-relative paths are allowed.",
+    "reset_default": "Reset to default",
+    "config_saved": "Usage URL updated.",
+    "empty_url": "Configure an iframe URL to display the usage view."
   },
   "quota_management": {
     "title": "Quota Management",

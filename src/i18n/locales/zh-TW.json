@@ -116,6 +116,7 @@
     "auth_files": "驗證檔案",
     "oauth": "OAuth 登入",
     "quota_management": "配額管理",
+    "usage": "使用情況",
     "config_management": "設定面板",
     "logs": "記錄檢視",
     "system_info": "中心資訊"
@@ -1091,6 +1092,23 @@
         "add": "新增"
       }
     }
+  },
+  "usage": {
+    "title": "使用情況",
+    "description": "在管理中心內查看使用情況儀表板。",
+    "configure": "設定",
+    "refresh": "重新載入",
+    "open_in_new_tab": "在新分頁開啟",
+    "current_url": "目前使用情況 URL",
+    "url_placeholder": "/usage",
+    "config_title": "使用情況 iframe URL",
+    "config_hint": "URL 只會儲存在目前瀏覽器中。可使用根相對路徑（例如 /usage）或完整的 http(s) URL。",
+    "url_label": "Iframe URL",
+    "url_required": "URL 不可為空。",
+    "url_invalid": "僅支援 http(s) URL 或根相對路徑。",
+    "reset_default": "恢復預設",
+    "config_saved": "使用情況 URL 已更新。",
+    "empty_url": "請設定 iframe URL 以顯示使用情況視圖。"
   },
   "quota_management": {
     "title": "配額管理",
