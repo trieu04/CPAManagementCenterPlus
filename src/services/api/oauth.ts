@@ -5,6 +5,8 @@
 import { apiClient } from './client';
 import type { IFlowCookieAuthResponse } from '@/types/oauth';
 
+export type { IFlowCookieAuthResponse };
+
 export type OAuthProvider =
   | 'codex'
   | 'anthropic'
